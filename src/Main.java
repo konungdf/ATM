@@ -3,10 +3,12 @@
  */
 public class Main {
     public static void main(String[] args) {
-        Atm atm = new Atm();
+        int[][] banknotes = {{5000, 2,}, {1000, 5}, {500, 2}, {100, 2}};
 
-        int pan = atm.requestPan();
+        Atm atm = new Atm(banknotes);
+
+        //int pan = atm.requestPan();
         int amount = atm.requestAmount();
-        atm.giveCash(amount);
+        atm.withdraw(amount);
     }
 }
