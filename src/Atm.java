@@ -1,9 +1,7 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
-/**
- * Created by kdf on 27.03.2017.
- */
 public class Atm {
     final String PAN_REQUEST = "Введите номер карты: ";
     final String AMOUNT_REQUEST = "Введите сумму: ";
@@ -21,6 +19,7 @@ public class Atm {
             cartridges.add(new Cartridge(cartridge[0], cartridge[1]));
         }
         cartridges.trimToSize();
+        cartridges.sort(Comparator.comparing(Cartridge::getDenomination).reversed());
     }
 
     public int requestPan() {
